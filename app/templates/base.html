@@ -1,0 +1,34 @@
+<html>
+        <head>
+            {% if title %}
+            <title> {{ title }} - First App</title>
+            {% else %}
+            <title> Welcome to homepage </title>
+            {% endif %}
+        </head>
+        <body>
+            <div>First App: <a href="/index">Home</a>
+                            <a href="/login">Login</a>
+                            <a href="/signup">Signup</a>
+                            <a href="/logout">Logout</a>
+                            <a href="/Upload">Upload</a>
+
+            </div>
+            <h1>Hello, World!</h1>
+            <hr>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% endwith %}
+            
+            {% block content%}
+            
+            {% endblock%}
+        </body>
+</html>
